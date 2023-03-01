@@ -29,6 +29,7 @@ namespace Mission9_jacobac3.Models
         public PageInfo PageBlah { get; set; }
 
         public string PageAction { get; set; }
+        // bootstrap page number link stuff
         public bool PageClassesEnabled { get; set; } = false;
         public string PageClass { get; set; }
         public string PageClassNormal { get; set; }
@@ -39,6 +40,7 @@ namespace Mission9_jacobac3.Models
             IUrlHelper uh = uhf.GetUrlHelper(vc);
 
             TagBuilder final = new TagBuilder("div");
+            // add a number for each page there will be
 
             for (int i = 1; i <= PageBlah.TotalPages; i++)
             {

@@ -22,6 +22,7 @@ namespace Mission9_jacobac3.Controllers
         [HttpGet]
         public IActionResult Index(int pageNum = 1)
         {
+            // make it so there are 10 books per page
             int pageSize = 10;
 
             var x = new BooksViewModel
