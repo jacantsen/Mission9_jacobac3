@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Mission9_jacobac3.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace Mission9_jacobac3
 {
@@ -32,6 +33,9 @@ namespace Mission9_jacobac3
             services.AddRazorPages();
             services.AddDistributedMemoryCache();
             services.AddSession();
+            services.AddScoped<Basket>(x => SessionBasket.GetBasket(x));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<ICheckoutRepository, EFCheckoutRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

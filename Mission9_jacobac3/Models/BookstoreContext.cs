@@ -20,6 +20,7 @@ namespace Mission9_jacobac3.Models
         }
 
         public DbSet<Book> Books { get; set; }
+        public DbSet<Checkout> checkouts { get; set; }
 
     }
 }
